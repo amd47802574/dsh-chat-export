@@ -1,0 +1,58 @@
+{
+  "name": "dsh-chat-export",
+  "version": "0.1.7",
+  "description": "Readable transcript export for DeepSeek Harness: turn any Session into a Markdown / HTML / ZIP transcript with reasoning blocks, tool calls and results, images and usage — fork: 每回合只保留最终回复的「模型输出(无思考)」默认导出",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js",
+    "./client": "./src/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "src",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "transcript",
+    "chat-export",
+    "对话导出",
+    "导出文字稿",
+    "markdown",
+    "session",
+    "export",
+    "final-only"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amd47802574/dsh-chat-export.git"
+  },
+  "scripts": {
+    "test": "node test/final-only.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-conversation",
+        "@deepseek-ai/dsh-client-ui-primitives"
+      ]
+    },
+    "engines": {
+      "dsh": ">=0.1.6-alpha.2"
+    }
+  }
+}
