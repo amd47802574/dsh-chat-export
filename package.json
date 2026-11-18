@@ -1,6 +1,6 @@
 {
   "name": "dsh-chat-export",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Readable transcript export for DeepSeek Harness: turn any Session into a Markdown / HTML / ZIP transcript with reasoning blocks, tool calls and results, images and usage — fork: 每回合只保留最终回复的「模型输出(无思考)」默认导出",
   "type": "module",
   "main": "src/index.js",
@@ -11,6 +11,7 @@
   },
   "files": [
     "src",
+    "test",
     "cordis.patch.yml",
     "README.md",
     "LICENSE"
@@ -34,7 +35,8 @@
     "url": "git+https://github.com/amd47802574/dsh-chat-export.git"
   },
   "scripts": {
-    "test": "node test/final-only.mjs"
+    "test": "node test/final-only.mjs",
+    "test:real": "node test/real-session.mjs"
   },
   "engines": {
     "node": ">=22"

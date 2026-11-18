@@ -49,6 +49,7 @@ dsh plugin --profile web add github:amd47802574/dsh-chat-export
 
 ```sh
 npm test        # 即 node test/final-only.mjs，27 项断言
+npm run test:real -- <session.v4.jsonl.zstd> [预览输出.md]   # 用真实会话日志端到端验证 finalOnly 过滤
 ```
 
 覆盖：每回合只留最终回复、播报消失、计数重算、`finalOnly` 隐含模型输出、两开关全关时不输出模型内容、命令行与 query 解析、对话框默认值与开关顺序。
